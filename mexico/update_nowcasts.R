@@ -63,7 +63,9 @@ get_mexico_regional_cases <- function() {
   #path <- "https://raw.githubusercontent.com/marianarf/covid19_mexico_analysis/master/output_data/latest.csv"
 
   #Provisional  
-  path <- "https://raw.githubusercontent.com/marianarf/covid19_mexico_analysis/8fc155422275fa4f6f6a009c4e657187f6f632db/output_data/latest.csv"
+  path <- "https://raw.githubusercontent.com/marianarf/covid19_mexico_analysis/master/latest.csv"
+  
+  #path <- "https://raw.githubusercontent.com/marianarf/covid19_mexico_analysis/8fc155422275fa4f6f6a009c4e657187f6f632db/output_data/latest.csv"
   
   ## Set up cache
   ch <- memoise::cache_filesystem(".cache")
