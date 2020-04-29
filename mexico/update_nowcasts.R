@@ -12,10 +12,11 @@ require(magrittr)
 get_mexico_linelist <- function() {
     
     #Oficial latest
-    #path <- "https://raw.githubusercontent.com/marianarf/covid19_mexico_analysis/master/output_data/latest.csv"
+    #path <- https://github.com/marianarf/covid19_mexico_analysis/blob/master/latest.csv
     
     #Provisional  
-    path <- "https://raw.githubusercontent.com/marianarf/covid19_mexico_analysis/8fc155422275fa4f6f6a009c4e657187f6f632db/output_data/latest.csv"
+    path <- "https://raw.githubusercontent.com/marianarf/covid19_mexico_analysis/master/latest.csv" # last updated 29-04-2020
+    #path <- '../latest.csv' # path where latest local csv is stored
     
     ## Set up cache
     ch <- memoise::cache_filesystem(".cache")
