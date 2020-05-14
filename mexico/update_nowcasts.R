@@ -67,7 +67,7 @@ NCoVUtils::reset_cache()
 
 # Opcion directo desde archivo subido
 # Se quita el primer registro porque sale negativo por el shift
-cases <- readr::read_csv('/home/covid/casos_060520.txt') %>% 
+cases <- readr::read_csv('/home/covid/casos_130520.txt') %>% 
   dplyr::filter( cases > 0 )
 
 #cases <- get_mexico_regional_cases() %>% 
