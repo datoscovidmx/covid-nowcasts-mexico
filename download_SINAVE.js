@@ -20,6 +20,10 @@ function descarga_datos(result) {
     download(JSON.stringify(result,null,2), 'datos.txt', 'text/plain');
 }
 
+function descarga_datos2(result) {
+    download(JSON.stringify(result,null,2), 'datos2.txt', 'text/plain');
+}
+
 function descargarEstados() {
     $.ajax({
         type: "POST",
@@ -46,6 +50,19 @@ function descargarDatos() {
             alert(result.status + ' : ' + result.statusText);
         }
     });
+    
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: "Graficasconfirmados.aspx/Datos2",
+        data: "{}",
+        datatype: "json",
+        success: descarga_datos2,
+        error: function ajaxError(result) {
+            alert(result.status + ' : ' + result.statusText);
+        }
+    });
+    
 }
 
 descargarEstados();
