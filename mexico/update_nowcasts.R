@@ -67,9 +67,14 @@ NCoVUtils::reset_cache()
 
 # Opcion directo desde archivo subido
 # Se quita el primer registro porque sale negativo por el shift
-cases <- readr::read_csv('/home/covid/casos_030620.txt') %>% 
+# Update 18 de Junio: Se toman los ultimos 60 dias.
+# El filtro de NACIONAL se ejecuta previamente.
+
+cases <- readr::read_csv('/home/covid/casos_180620.txt') %>%
+  dplyr::filter( date >= Sys.Date() - 60 ) %>%
   dplyr::filter( cases > 0 ) %>%
-  dplyr::filter( region != 'NACIONAL' )
+  dplyr::filter( region != 'COLIMA' ) %>%
+  dplyr::filter( region != 'DURANGO' )
 
 #cases <- get_mexico_regional_cases() %>% 
 #  dplyr::filter(import_status  == "local") %>%
@@ -194,7 +199,7 @@ EpiNow::regional_rt_pipeline(
   linelist = linelist,
   regional_delay = FALSE,
   target_folder = "mexico/regional",
-  case_limit = 10,
+  case_limit = 40,
   verbose = TRUE,
 
   horizon = 14,
