@@ -70,7 +70,7 @@ NCoVUtils::reset_cache()
 # Update 18 de Junio: Se toman los ultimos 60 dias.
 # El filtro de NACIONAL se ejecuta previamente.
 
-cases <- readr::read_csv('/home/covid/casos_180620.txt') %>%
+cases <- readr::read_csv('/home/covid/casos_260620.txt') %>%
   dplyr::filter( date >= Sys.Date() - 60 ) %>%
   dplyr::filter( cases > 0 ) %>%
   dplyr::filter( region != 'COLIMA' ) %>%
